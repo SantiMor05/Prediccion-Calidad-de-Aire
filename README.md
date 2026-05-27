@@ -115,16 +115,13 @@ Comparar el desempeño predictivo de tres modelos de regresión:
 4. SENAMHI. (2024). Monitoreo de los contaminantes del aire en Lima Metropolitana. Plataforma Nacional de Datos Abiertos del Perú. https://www.datosabiertos.gob.pe/dataset/monitoreo-de-los-contaminantes-del-aire-en-lima-metropolitana-servicio-nacional-de
 
 ---
-
 ## 👥 Autores
 
-| Nombre | Código |
-|---|---|
-| Esteban Leonardo Guevara Sanchez | 20231348 |
-| Diego Gharnerd Ayala de la Cruz | 20233483 |
-| Matias Jesús Iturri Mendoza | 20230827 |
-| Álvaro Francisco Armas Jáuregui | 20231067 |
-| Santiago Mijael Alexandre Moreno Galvez | 20231523 |
+- Esteban Leonardo Guevara Sanchez
+- Diego Gharnerd Ayala de la Cruz
+- Matias Jesús Iturri Mendoza
+- Álvaro Francisco Armas Jáuregui
+- Santiago Mijael Alexandre Moreno Galvez
 
 ---
 
