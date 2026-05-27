@@ -18,7 +18,7 @@ Comparar el desempeño predictivo de tres modelos de regresión:
 
 | Modelo | Tipo |
 |---|---|
-| Regresión Lineal Múltiple | Lineal (baseline) |
+| Regresión Lineal Múltiple | Lineal |
 | Árbol de Regresión | No lineal |
 | K-Nearest Neighbors (KNN) | No lineal |
 
