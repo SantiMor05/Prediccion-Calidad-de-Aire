@@ -80,11 +80,6 @@ El proceso de preparación de datos incluyó las siguientes etapas:
 
 ### Modelos
 
-**Regresión Lineal Múltiple (baseline)**
-```
-ŷ = β₀ + β₁·PM10 + β₂·NO2 + β₃·hora + β₄·mes + β₅·año + β₆·altitud + Σβₖ·estación_k
-```
-
 | Modelo | Configuración inicial |
 |---|---|
 | Regresión Lineal | Parámetros por defecto |
