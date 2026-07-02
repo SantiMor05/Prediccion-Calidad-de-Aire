@@ -87,8 +87,7 @@ El proceso de preparación de datos incluyó las siguientes etapas:
 | KNN | `n_neighbors=5` |
 
 ### Validación
-- División: 60% entrenamiento / 20% validación / 20% prueba
-- Estratificación por estación de monitoreo
+- División: 80% entrenamiento / 20% prueba
 - Métricas: **MAE**, **RMSE**, **R²**
 
 ---
