@@ -26,27 +26,6 @@ Comparar el desempeño predictivo de tres modelos de regresión:
 
 ---
 
-## 📂 Estructura del repositorio
-
-```
-├── data/
-│   └── senamhi_aire_lima.csv        # Dataset original del SENAMHI
-├── notebooks/
-│   ├── 01_exploracion.ipynb         # Análisis exploratorio del dataset
-│   ├── 02_preprocesamiento.ipynb    # Limpieza y transformación de datos
-│   └── 03_modelos.ipynb             # Entrenamiento y comparación de modelos
-├── src/
-│   ├── preprocessing.py             # Funciones de preprocesamiento
-│   └── models.py                    # Implementación de los 3 modelos
-├── results/
-│   └── metricas.csv                 # Resultados MAE, RMSE, R² por modelo
-├── informe/
-│   └── GRUPO3-TA-Parcial.pdf        # Informe parcial entregado
-└── README.md
-```
-
----
-
 ## 📊 Dataset
 
 - **Fuente:** SENAMHI — Plataforma Nacional de Datos Abiertos del Perú
@@ -56,27 +35,48 @@ Comparar el desempeño predictivo de tres modelos de regresión:
 
 ### Variables utilizadas
 
+Tras el proceso de selección y transformación de variables, se utilizaron las siguientes características para el entrenamiento de los modelos:
+
 | Variable | Tipo | Descripción |
 |---|---|---|
-| `PM2_5` | Float | **Target** — Concentración de PM2.5 (µg/m³) |
+| `PM2_5` | Float | **Variable objetivo** — Concentración de PM2.5 (µg/m³) |
 | `PM10` | Float | Concentración de PM10 (µg/m³) |
 | `NO2` | Float | Concentración de NO2 (µg/m³) |
-| `hora` | Integer | Hora del registro (0–23) |
-| `mes` | Integer | Mes del registro (1–12) |
-| `anio` | Integer | Año del registro (2015–2024) |
+| `anio` | Integer | Año de la medición |
+| `mes` | Integer | Mes de la medición |
+| `turno` | Categórica | Turno horario (mañana, tarde o noche) |
 | `ALTITUD` | Float | Altitud de la estación (m.s.n.m.) |
-| `ESTACION` | Categórica | Estación de monitoreo (one-hot encoding) |
+| `ESTACION` | Categórica | Estación de monitoreo (codificada mediante One-Hot Encoding) |
+
+### Variables descartadas
+
+Las siguientes variables fueron eliminadas durante el proceso de selección debido a redundancia o falta de capacidad predictiva:
+
+- `DEPARTAMENTO`
+- `PROVINCIA`
+- `FECHA_CORTE`
+- `UBIGEO`
+- `DISTRITO`
+- `LATITUD`
+- `LONGITUD`
 
 ---
 
 ## ⚙️ Metodología
 
-### Preprocesamiento
-1. Filtrado de registros con PM2.5 válido
-2. Imputación por mediana para valores faltantes en PM10 y NO2
-3. Extracción de variables temporales (hora, mes, año) desde campos FECHA y HORA
-4. One-hot encoding para la variable ESTACION
-5. Estandarización de variables numéricas (media 0, desviación estándar 1) para KNN y Regresión Lineal
+### Preprocesamiento y selección de variables
+
+El proceso de preparación de datos incluyó las siguientes etapas:
+
+1. Filtrado de registros con valores válidos de PM2.5.
+2. Imputación mediante la mediana para valores faltantes en PM10 y NO2.
+3. Tratamiento de valores extremos mediante winsorización de PM2.5 a 250 µg/m³.
+4. Extracción de variables temporales a partir de la fecha y hora de medición.
+5. Transformación de la variable hora en tres categorías: mañana, tarde y noche.
+6. Eliminación de variables redundantes o no informativas.
+7. Codificación One-Hot Encoding para la variable ESTACION.
+8. Escalamiento de variables numéricas para modelos sensibles a la escala.
+
 
 ### Modelos
 
