@@ -85,16 +85,11 @@ El proceso de preparación de datos incluyó las siguientes etapas:
 ŷ = β₀ + β₁·PM10 + β₂·NO2 + β₃·hora + β₄·mes + β₅·año + β₆·altitud + Σβₖ·estación_k
 ```
 
-**Árbol de Regresión**
-- Hiperparámetros ajustados via Grid Search + 5-fold CV
-- `max_depth` ∈ {3, 5, 7, 10, 15}
-- `min_samples_split` ∈ {2, 10, 50}
-- `min_samples_leaf` ∈ {1, 5, 20}
-
-**KNN Regressor**
-- Distancia euclidiana sobre variables estandarizadas
-- `k` ∈ {3, 5, 7, 10, 15, 20}
-- `weights` ∈ {uniform, distance}
+| Modelo | Configuración inicial |
+|---|---|
+| Regresión Lineal | Parámetros por defecto |
+| Árbol de Regresión | `random_state=7` |
+| KNN | `n_neighbors=5` |
 
 ### Validación
 - División: 60% entrenamiento / 20% validación / 20% prueba
