@@ -44,7 +44,7 @@ Tras el proceso de selección y transformación de variables, se utilizaron las 
 | `NO2` | Float | Concentración de NO2 (µg/m³) |
 | `anio` | Integer | Año de la medición |
 | `mes` | Integer | Mes de la medición |
-| `turno` | Categórica | Turno horario (mañana, tarde o noche) |
+| `turno` | Categórica | Turno horario (mañana, tarde o noche) (codificada mediante One-Hot Encoding)|
 | `ALTITUD` | Float | Altitud de la estación (m.s.n.m.) |
 | `ESTACION` | Categórica | Estación de monitoreo (codificada mediante One-Hot Encoding) |
 
